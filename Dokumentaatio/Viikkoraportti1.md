@@ -12,3 +12,6 @@ Epäselväksi jäi mitä algoritmia olisi järkevin käyttää itse salausavaint
 
 ### Mitä teen seuraavaksi?
 Aloitan itse koodin tekemisen ja testien luonnin samalla. Ideana käyttää test first menetelmää koodatessa. Varmaan koodin perusrakenne ja tekstipohjainen käyttöliittymä on ihan ekana listalla
+
+### Käytetty aika
+Aikaa käytetty noin 6 tuntia, joka kului määrittelydokumentaation tekemiseen, algoritmeihin tutustumiseen sekä kurssiaiheen valintaan
