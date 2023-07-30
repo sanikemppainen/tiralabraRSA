@@ -13,9 +13,9 @@ def main():
 
     #ITSE SALAUS:
     #tee alkuluvut
-    alkuluvut = loytaa_alkuluvut_erasthoteen_seulalla()
+    alkuluvut = loytaa_alkuluvut_erasthoteen_seulalla(500)
     #500 pienimmällä tuotetulla alkuvulla alkukarsinta 
-    karsittu_lista = tarkistaa_alkuluvut_miller_rabin_algoritmilla(alkuluvut, 500)
+    karsittu_lista = tarkistaa_alkuluvut_miller_rabin_algoritmilla(alkuluvut)
     #luo avaimet
     #salaa viesti avaimilla
     #palauta salattu viesti
