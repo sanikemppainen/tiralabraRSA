@@ -9,4 +9,6 @@ Kurssin aikana tulen tällä koodilla luomaan itse tuotettuja RSA-avainpareja jo
 
 [Viikkoraportti 1](https://github.com/sanikemppainen/tiralabraRSA/blob/main/Dokumentaatio/Viikkoraportti1.md)
 
+[Viikkoraportti 2](https://github.com/sanikemppainen/tiralabraRSA/blob/main/Dokumentaatio/Viikkoraportti2.md)
+
 
