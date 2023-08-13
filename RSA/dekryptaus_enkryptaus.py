@@ -1,8 +1,8 @@
 """Tiedostosa on viestin dekryptaus ja enkryptaukseen vaadittavat toiminnot"""
-import base64
 from alkulukujen_luonti import laske_mod_exp
 
-def encrypt(julkinen:int, n:int, viesti:str):
+
+def encrypt(julkinen: int, n: int, viesti: str):
     """
     Palauttaa julkisella avaimella salatun viestin
     Args:
@@ -16,16 +16,17 @@ def encrypt(julkinen:int, n:int, viesti:str):
 
     """
     jokainen_merkki_salattu = []
-    #muuta jokainen kirjain stringistä numeroihin a^b mod c perusteella
-    for merkki in viesti:   
-        #antaa yhdelle merkille unicoden pointin
+    # muuta jokainen kirjain stringistä numeroihin a^b mod c perusteella
+    for merkki in viesti:
+        # antaa yhdelle merkille unicoden pointin
         merkin_koodi = ord(merkki)
         salattu_merkki = laske_mod_exp(merkin_koodi, julkinen, n)
         jokainen_merkki_salattu.append(salattu_merkki)
-    salattu_viesti = ''.join(str(i) for i in jokainen_merkki_salattu)
+    salattu_viesti = "".join(str(i) for i in jokainen_merkki_salattu)
     return salattu_viesti, jokainen_merkki_salattu
 
-def decrypt(salainen:int, n:int, viesti:str):
+
+def decrypt(salainen: int, n: int, viesti: str):
     """
     Palauttaa salatulla avaimella puretun viestin
     Args:
@@ -37,12 +38,11 @@ def decrypt(salainen:int, n:int, viesti:str):
         salattu_viesti(str): viesti josta on purettu salaus
     """
     jokainen_merkki_purettu = []
-    
+
     for merkki in viesti:
         purettu_merkki = laske_mod_exp(merkki, salainen, n)
-        #antaa unicode stringin 
+        # antaa unicode stringin
         chr_merkki = chr(purettu_merkki)
         jokainen_merkki_purettu.append(chr_merkki)
-    purettu_viesti = ''.join(str(i) for i in jokainen_merkki_purettu)
+    purettu_viesti = "".join(str(i) for i in jokainen_merkki_purettu)
     return purettu_viesti
-

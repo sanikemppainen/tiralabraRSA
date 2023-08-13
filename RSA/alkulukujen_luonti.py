@@ -1,4 +1,6 @@
+"""Luodaan alkuluvut, niiden tarkistus ja p + q valinta"""
 import random
+
 
 def loytaa_alkuluvut_erasthoteen_seulalla(n):
     """
@@ -10,7 +12,6 @@ def loytaa_alkuluvut_erasthoteen_seulalla(n):
     Returns:
         alkuluvut(List): palauttaa luodun listan alkuluvuista
     """
-
 
     listan_pituus = n + 1
     booleanlista = []
@@ -38,7 +39,16 @@ def loytaa_alkuluvut_erasthoteen_seulalla(n):
             alkuluvut.append(i)
     return alkuluvut
 
+
 def loyda_p_q(alkuluku_lista):
+    """
+    Valitaan p tai q
+    Args:
+        alkuluku_lista(list): lista alkuluvuista
+
+    Returns:
+        luku(int): p tai q
+    """
     bits = 1024
 
     while True:
@@ -49,7 +59,15 @@ def loyda_p_q(alkuluku_lista):
 
 
 def onko_alkuluku(luku, k):
-    """Rabin-Millerin alogritmi"""
+    """
+    Rabin-Millerin alogritmi
+    Args:
+        luku(int): käsiteltävä luku
+        k(int): monestikko käydään tämä läpi
+
+    Returns:
+        True tai False(boolean): True tai false sen perusteella onko alkuluku
+    """
 
     if luku == 0 or luku == 1:
         return False
@@ -97,16 +115,18 @@ def onko_alkuluku(luku, k):
     return True
 
 
-
-
-#arvotaan randomilla 1024 bittisiä lukuja kunnes on löydetty kaksi alkulukua
-#jokainen arvottu luku -> jaetaan kaikilla listassa olevilla alkuluvuilla
-#jos joku jako menee tasan -> luku hylätään
-# jos luku menee läpi tästä -> testataan miller rabinilla 40 kertaa
-
 def laske_mod_exp(a, b, c):
     """
     Tekee a^b mod c laskun
+
+    Args:
+        a(int):
+        b(int):
+        c(int):
+
+    Returns:
+        tulos(int): a^b mod c laskutoimituksen tulos
+
     """
     tulos = 1
     a %= c

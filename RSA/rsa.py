@@ -1,28 +1,26 @@
-"""kutsutaan muita metodeja"""
-# from alkuluvut import (
-#    loytaa_alkuluvut_erasthoteen_seulalla,
-#    tarkistaa_alkuluvut_miller_rabin_algoritmilla,
-# )
+"""Main"""
+import avain_generaattori
+import dekryptaus_enkryptaus
+import alkulukujen_luonti
 
+if __name__ == "__main__":
+    # lasketaan eka lista täyteen alkulukuja erasthotheenen seulalla
+    alkuluku_lista = alkulukujen_luonti.loytaa_alkuluvut_erasthoteen_seulalla(500)
 
-def main():
-    """
-    main
-    """
-    # encrypt:
+    # arvotaan randomilla 1024 bittisiä lukuja kunnes on löydetty kaksi alkulukua
+    # jokainen arvottu luku -> jaetaan kaikilla listassa olevilla alkuluvuilla
+    # jos joku jako menee tasan -> luku hylätään
+    # jos luku menee läpi tästä -> testataan miller rabinilla 40 kertaa
+    p = alkulukujen_luonti.loyda_p_q(alkuluku_lista)
+    q = alkulukujen_luonti.loyda_p_q(alkuluku_lista)
 
-    # str_viesti = input()
-    # b64_viesti = decode_viesti(str_viesti)
-    # b64 formaattiin
-    # int_viesti = b64_to_int(b64_viesti)
+    julkinen_avain, salainen_avain, n = avain_generaattori.generoi_avaimet(p, q)
 
-    # ITSE SALAUS:
-    # tee alkuluvut
-    # alkuluvut = loytaa_alkuluvut_erasthoteen_seulalla(500)
-    # 500 pienimmällä tuotetulla alkuvulla alkukarsinta
-    # karsittu_lista = tarkistaa_alkuluvut_miller_rabin_algoritmilla(alkuluvut)
-    # luo avaimet
-    # salaa viesti avaimilla
-    # palauta salattu viesti
+    str_viesti = input("Anna vieti salattavaksi:")
 
-    # decrypt:
+    enkryptattu_viesti, array = dekryptaus_enkryptaus.encrypt(
+        julkinen_avain, n, str_viesti
+    )
+    print("Tässä on salattu viesti: ", enkryptattu_viesti)
+    dekryptattu_viesti = dekryptaus_enkryptaus.decrypt(salainen_avain, n, array)
+    print("Tässä purettu viesti: ", dekryptattu_viesti)
