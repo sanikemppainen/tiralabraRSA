@@ -7,7 +7,7 @@ Kurssin aikana tulen tällä koodilla luomaan itse tuotettuja RSA-avainpareja jo
 
 [Määrittelydokumentti](https://github.com/sanikemppainen/tiralabraRSA/blob/main/Dokumentaatio/M%C3%A4%C3%A4rittelydokumentti.md)
 
-[Testausdokumentti]()
+[Testausdokumentti](https://github.com/sanikemppainen/tiralabraRSA/blob/main/Dokumentaatio/Testausdokumentti.md)
 
 ## Viikkoraportit
 
@@ -15,5 +15,5 @@ Kurssin aikana tulen tällä koodilla luomaan itse tuotettuja RSA-avainpareja jo
 
 [Viikkoraportti 2](https://github.com/sanikemppainen/tiralabraRSA/blob/main/Dokumentaatio/Viikkoraportti2.md)
 
-[Viikkoraportti 3]()
+[Viikkoraportti 4](https://github.com/sanikemppainen/tiralabraRSA/blob/main/Dokumentaatio/Viikkoraportti4.md)
 
