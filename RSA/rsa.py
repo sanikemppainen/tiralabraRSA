@@ -4,13 +4,8 @@ import dekryptaus_enkryptaus
 import alkulukujen_luonti
 
 if __name__ == "__main__":
-    # lasketaan eka lista täyteen alkulukuja erasthotheenen seulalla
     alkuluku_lista = alkulukujen_luonti.loytaa_alkuluvut_erasthoteen_seulalla(500)
 
-    # arvotaan randomilla 1024 bittisiä lukuja kunnes on löydetty kaksi alkulukua
-    # jokainen arvottu luku -> jaetaan kaikilla listassa olevilla alkuluvuilla
-    # jos joku jako menee tasan -> luku hylätään
-    # jos luku menee läpi tästä -> testataan miller rabinilla 40 kertaa
     p = alkulukujen_luonti.loyda_p_q(alkuluku_lista)
     q = alkulukujen_luonti.loyda_p_q(alkuluku_lista)
 
