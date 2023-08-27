@@ -40,25 +40,24 @@ def loytaa_alkuluvut_erasthoteen_seulalla(n):
     return alkuluvut
 
 
-def loyda_p_q(alkuluku_lista):
+def loyda_p_q(alkuluku_lista, bitti_pituus):
     """
     Valitaan p tai q
     Args:
         alkuluku_lista(list): lista alkuluvuista
 
-    Returns:
+    Returns:<
         luku(int): p tai q
     """
-    bits = 1024
-
+    n = bitti_pituus // 2
     while True:
-        luku = random.choice(alkuluku_lista)
+        luku = random.getrandbits(n)
+        if onko_alkuluku(luku, 40, alkuluku_lista):
+            break
+    return luku
 
-        if onko_alkuluku(luku, k=40):
-            return luku
 
-
-def onko_alkuluku(luku, k):
+def onko_alkuluku(luku, k, alkuluku_lista):
     """
     Rabin-Millerin alogritmi
     Args:
@@ -77,6 +76,11 @@ def onko_alkuluku(luku, k):
         return False
     if luku == 3:
         return True
+
+    # tekee eka alustavan alkulukutestin:
+    for luku_listalta in alkuluku_lista:
+        if luku % luku_listalta == 0:
+            return False
 
     y = 0
     d = luku - 1
