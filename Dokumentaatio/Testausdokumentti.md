@@ -25,10 +25,15 @@ Suorituskykytestauksessa laskettiin kauanko avaimien luonnisa kesti aikaa. Täm�
 Yleisesti hyväksytty alhaisin [avaimen pituus on 2048 bittiä](https://en.wikipedia.org/wiki/Key_size). Nopean logiikkatestauksen sekä salauksen riippuvuuden avaimen pituudesta hahmottamiseksi valitsin neljä muutakin bitti pituutta salauksen vahvuuden vaihtoehdoiksi. Tässä ei ole laskettu salausta/purkamista koska se on syöte riippuvainen. Joten tämä ajanmittaus on tehty alkulukujen luonnin, validoinnnin ja aivaimien generoimisen perusteella. Saatu aika on 50 suorituskerran keskiarvo.
 
 Keskivertotulokset olivat seuraavanlaiset näillä avaimen pituuksilla:
+
 512:    0.000133s
+
 1024:   0.000551s
+
 2048:   0.001542s
+
 4096:   0.013516s
+
 8192:   0.480271s
 
 ## Minkälaisilla syötteillä testaus tehtiin (vertailupainotteisissa töissä tärkeää)?
