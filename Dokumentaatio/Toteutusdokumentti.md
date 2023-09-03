@@ -3,8 +3,6 @@
 ### Ohjelman yleisrakenne
 Ohjelman käynnistäessä luodaan ensin salausavaimet. Sitten käyttäjältä kysytään syötettä salattavaksi. Tämä sitten salataan ja palautetaan salattu syöte ja dekryptattu viesti, jotta nähdään että salaus toimii.
 
-Ensi viikolla ideana laittaa salaus toimimaan myös niin että on erilliset komennot syötteen salaamiseen ja purkamiseen jotta pelkkä purkaminenkin toimii.
-
 Yleisesti ottaen ohjelman koodi voidaan jakaa kolmeen osaan:
 1. Alkulukujen luonti: Tähän käytetään erasthoteenen seulaa, alkulukulistalta randomilla kahden arvon valitseminen, sekä Rabin-Millerin algoritmi. Myös apufunktio jossa lasketaan a^b mod c lasku.
 
@@ -14,7 +12,6 @@ Yleisesti ottaen ohjelman koodi voidaan jakaa kolmeen osaan:
 3. Enkryptaus ja dekryptaus: Tähän käytetään luotuja avaimia ja muutetaan merkki kerrallaan viesti joko salatuksi tai se puretaan. 
 
 ### Saavutetut aika- ja tilavaativuudet (m.m. O-analyysit pseudokoodista)
-(lisätään tähän sitä mukaan kun näitä on laskettu/tehty)
 
 #### Aikavaativuudet:
 1. Alkulukujen luonti:

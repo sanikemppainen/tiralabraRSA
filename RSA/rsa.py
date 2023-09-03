@@ -44,7 +44,6 @@ if __name__ == "__main__":
         p = alkulukujen_luonti.loyda_p_q(alkuluku_lista, (bitti_pituus))
         q = alkulukujen_luonti.loyda_p_q(alkuluku_lista, (bitti_pituus))
         julkinen_avain, salainen_avain, n = avain_generaattori.generoi_avaimet(p, q)
-        print("!", julkinen_avain, salainen_avain, n)
         loppuaika = time.time()
         aika = loppuaika - alkuaika
 
