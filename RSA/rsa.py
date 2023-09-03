@@ -1,4 +1,4 @@
-"""Main"""
+"""Tämän tiedoston ajamalla saa sovelluksen käyntiin ja suljettua"""
 import avain_generaattori
 import dekryptaus_enkryptaus
 import alkulukujen_luonti

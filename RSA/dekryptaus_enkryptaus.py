@@ -16,9 +16,7 @@ def encrypt(julkinen: int, n: int, viesti: str):
 
     """
     jokainen_merkki_salattu = []
-    # muuta jokainen kirjain stringistä numeroihin a^b mod c perusteella
     for merkki in viesti:
-        # antaa yhdelle merkille unicoden pointin
         merkin_koodi = ord(merkki)
         salattu_merkki = laske_mod_exp(merkin_koodi, julkinen, n)
         jokainen_merkki_salattu.append(salattu_merkki)
@@ -41,7 +39,6 @@ def decrypt(salainen: int, n: int, viesti: str):
 
     for merkki in viesti:
         purettu_merkki = laske_mod_exp(merkki, salainen, n)
-        # antaa unicode stringin
         chr_merkki = chr(purettu_merkki)
         jokainen_merkki_purettu.append(chr_merkki)
     purettu_viesti = "".join(str(i) for i in jokainen_merkki_purettu)

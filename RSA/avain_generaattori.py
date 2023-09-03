@@ -28,10 +28,8 @@ def generoi_avaimet(p, q):
 
     julkinen_exponentti = 65537
 
-    # julkinen
     if loyda_isoin_yhteinen_jakaja(julkinen_exponentti, t) == 1:
         julkinen = julkinen_exponentti
-    # salainen
     salainen = laske_mod_kaanteis(julkinen, t)
 
     return julkinen, salainen, n
@@ -63,7 +61,6 @@ def laske_mod_kaanteis(julkinen, t):
     """
 
     def laajempi_yhteisen_jakajan_etsiminen(a, b):
-        # nolla on erikoistapaus
         if a == 0:
             return b, 0, 1
         g, x, y = laajempi_yhteisen_jakajan_etsiminen((b % a), a)
@@ -71,6 +68,5 @@ def laske_mod_kaanteis(julkinen, t):
 
     g, x, y = laajempi_yhteisen_jakajan_etsiminen(julkinen, t)
     if g != 1:
-        # aina pitäisi olla
         print("lukua ei olemassa")
     return x % t

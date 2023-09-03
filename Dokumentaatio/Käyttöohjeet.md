@@ -8,10 +8,12 @@
 
 Testattu ja luotu pythonin versiolla 3.10.12 
 
+Tarvitset myös coverage paketin koneelle.
+
 ## Ohjelman vastaanottamat syötteet
 
 Ohjelma vastaanottaa syötteitä terminaalista, eli syötteet luetaan stringinä
 
 ## Testaus
 
-Mene kansioon tiralabraRSA ja aja komento ```pytest```
+Mene kansioon tiralabraRSA josta mene kansioon RSA ja sitten aja komento ```pytest```

@@ -29,7 +29,7 @@ RSA-avaimen luominen
 
 ### Aika- ja tilavaativuudet
 z = alkulukujen yläparametri
-x = läpikäyntien määrä
+x = läpikäyntien määrämoi
 y = annettu luku
   * Eratosteeneen seula:
       - Aika O(z log (log z))
