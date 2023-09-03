@@ -4,9 +4,9 @@
 Ohjelman käynnistäessä luodaan ensin salausavaimet. Sitten käyttäjältä kysytään syötettä salattavaksi. Tämä sitten salataan ja palautetaan salattu syöte ja dekryptattu viesti, jotta nähdään että salaus toimii.
 
 Yleisesti ottaen ohjelman koodi voidaan jakaa kolmeen osaan:
-1. Alkulukujen luonti: Tähän käytetään erasthoteenen seulaa, alkulukulistalta randomilla kahden arvon valitseminen, sekä Rabin-Millerin algoritmi. Myös apufunktio jossa lasketaan a^b mod c lasku.
+1. Alkulukujen luonti: Tähän käytetään erasthoteenen seulaa, alkulukulistalta randomilla kahden arvon valitseminen, sekä Rabin-Millerin algoritmi. Myös apufunktio jossa lasketaan a^b mod c lasku. Valitaan sopivat alkuluvut p ja q.
 
-2. Avainten luonti: Tähän käytetään Eucliden algoritmia.
+2. Avainten luonti: Tähän käytetään Eucliden algoritmia ja aiemmin valittuja ja todennettuja p ja q muuttujia.
 
 
 3. Enkryptaus ja dekryptaus: Tähän käytetään luotuja avaimia ja muutetaan merkki kerrallaan viesti joko salatuksi tai se puretaan. 
@@ -19,19 +19,11 @@ Listan alustaminen vie O(n) aikaa pyhthonin standardilla listan luomisella: bool
 
 
 
-### Suorituskyky- ja O-analyysivertailu (mikäli työ vertailupainotteinen)
-(lisätään tähän sitä mukaan kun näitä on laskettu/tehty)
-
-
-
 ### Työn mahdolliset puutteet ja parannusehdotukset
-Vielä on hommaa niin testaus-, kehitys-, kuin dokumentaatiopuolellakin.
+Työstä olisi voinut tehdä molemminpäin toimivan, eli käyttäjältä olisi myös voinut kysyä salattua viestiä purettavaksi. Nyt salaaminen ja purkaminen tehdään annetulle samalle syötteelle.
 
 ### Lähteet
 https://en.wikipedia.org/wiki/RSA_(cryptosystem)
 https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 http://www.mit.jyu.fi/opiskelu/seminaarit/ohjelmistotekniikka/rsa/#s24
 https://en.wikipedia.org/wiki/Euclidean_algorithm
-
-
-
