@@ -66,6 +66,12 @@ def test_ei_loyda_ei_alkulukuja():
     assert 6 not in alkuluvut
 
 
+def test_alkulukujen_luonnin_samankaltaisuus_samalla_inputilla():
+    assert loytaa_alkuluvut_erasthoteen_seulalla(
+        500
+    ) == loytaa_alkuluvut_erasthoteen_seulalla(500)
+
+
 def test_palauttaa_oikeanlaiset_p_ja_q():
     alkuluku_lista = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
     p_tai_q = loyda_p_q(alkuluku_lista, 512)
@@ -98,12 +104,12 @@ def test_kolmonen_on_alkuluku():
 
 
 def test_tunnetulla_isolla_alkuluvulla():
-    luku = 5167
+    luku = 121499449
     assert onko_alkuluku(luku, 40, alkuluku_lista) == True
 
 
 def test_tunnetulla_isolla_ei_alkuluvulla():
-    luku = 5168
+    luku = 55555555
     assert onko_alkuluku(luku, 40, alkuluku_lista) == False
 
 

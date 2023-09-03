@@ -35,3 +35,4 @@ def test_laske_mod_kaanteis_onnistuneesti():
     julkinen = 7 
     t = 40
     assert laske_mod_kaanteis(julkinen, t) == 23
+

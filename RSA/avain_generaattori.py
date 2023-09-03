@@ -26,19 +26,18 @@ def generoi_avaimet(p, q):
 
     t = (p - 1) * (q - 1)
 
-    # julkinen
-    for i in range(2, t):
-        if loyda_isoin_yhteinen_jakaja(i, t) == 1:
-            julkinen = i
-            break
+    julkinen_exponentti = 65537
 
+    # julkinen
+    if loyda_isoin_yhteinen_jakaja(julkinen_exponentti, t) == 1:
+        julkinen = julkinen_exponentti
     # salainen
     salainen = laske_mod_kaanteis(julkinen, t)
 
     return julkinen, salainen, n
 
 
-def loyda_isoin_yhteinen_jakaja(i, t):
+def loyda_isoin_yhteinen_jakaja(julkinen_exponentti, t):
     """
     Euclidin algoritmilla etsitään isoin yhteinen jakaja.
     Kutsuu metodia rekursiivisesti kunnes t on 0.
@@ -49,9 +48,9 @@ def loyda_isoin_yhteinen_jakaja(i, t):
     Returns:
         i(int): isoin yhteinen jakaja
     """
-    if t == 0:
-        return i
-    return loyda_isoin_yhteinen_jakaja(t, (i % t))
+    while t:
+        julkinen_exponentti, t = t, julkinen_exponentti % t
+    return julkinen_exponentti
 
 
 def laske_mod_kaanteis(julkinen, t):

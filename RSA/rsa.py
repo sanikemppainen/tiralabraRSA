@@ -15,7 +15,6 @@ if __name__ == "__main__":
         )
         vahvuus = input("")
         bitti_pituus = 0
-        print("Valittu vahvuus: ", vahvuus)
         if vahvuus == "1":
             bitti_pituus = 512
             break
@@ -38,13 +37,14 @@ if __name__ == "__main__":
             print(
                 "Syötetty numero oli väärin, syötä joku näistä: 1, 2, 3, 4 tai 5 valitatksesi vahvuuden tai 0 sulkeaksi ohjelman"
             )
+    print("Odotathan kunnes sinulta kysytään syötettä")
     try:
         alkuaika = time.time()
         alkuluku_lista = alkulukujen_luonti.loytaa_alkuluvut_erasthoteen_seulalla(500)
-        p = alkulukujen_luonti.loyda_p_q(alkuluku_lista, (bitti_pituus // 2))
-        q = alkulukujen_luonti.loyda_p_q(alkuluku_lista, (bitti_pituus // 2))
+        p = alkulukujen_luonti.loyda_p_q(alkuluku_lista, (bitti_pituus))
+        q = alkulukujen_luonti.loyda_p_q(alkuluku_lista, (bitti_pituus))
         julkinen_avain, salainen_avain, n = avain_generaattori.generoi_avaimet(p, q)
-
+        print("!", julkinen_avain, salainen_avain, n)
         loppuaika = time.time()
         aika = loppuaika - alkuaika
 
